@@ -2,8 +2,8 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_natsukisor",
-            category=["Reconcile"],
+            eventlabel="sor_monika_natsuki",
+            category=["club members"],
             prompt="How do you feel about Natsuki?",
             random=False,
             pool=True,
@@ -11,7 +11,7 @@ init 5 python:
         )
     )
 
-label monika_natsukisor:
+label sor_monika_natsuki:
     m 1euc "Natsuki.."
     m 1eud "I actually don't have much to say about Natsuki."
     m 3rud "Her home situation was awful already."
@@ -28,8 +28,8 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_sayorisor",
-            category=["Reconcile"],
+            eventlabel="sor_monika_sayori",
+            category=["club members"],
             prompt="How do you feel about Sayori?",
             random=False,
             pool=True,
@@ -37,7 +37,7 @@ init 5 python:
         )
     )
 
-label monika_sayorisor:
+label sor_monika_sayori:
     m 1eud "How I feel about Sayori.."
     m 1eub "Well, she was an amazing vice president."
     m 3wub "I mean really, you saw how she broke up Yuri and Natsuki's fight."
@@ -58,8 +58,8 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="monika_yurisor",
-            category=["Reconcile"],
+            eventlabel="sor_monika_yuri",
+            category=["club members"],
             prompt="How do you feel about Yuri?",
             random=False,
             pool=True,
@@ -67,7 +67,7 @@ init 5 python:
         )
     )
 
-label monika_yurisor:
+label sor_monika_yuri:
     m 1euc "Yuri."
     m 3eud "The shy and timid bookworm."
     m 1eub "Her trope is a popular one."
