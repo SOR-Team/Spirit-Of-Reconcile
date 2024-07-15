@@ -2,7 +2,7 @@ init -990 python:
     store.mas_submod_utils.Submod(
         author="SOR Team",
         name="Spirit Of Reconcile",
-        description="Monika fixed us! And we fixed her too! Or is it..?",
+        description="Monika fixed us, and we fixed her too! Or did we..?",
         version="1.0.0"
     )
 
