@@ -47,92 +47,65 @@ init 5 python:
     )
 
 label sor_moni_codes:
-    play music t3
-    scene bg club_day
-    show monika 1a at t11
-    m "Hi [player]! "
-    m 2e "I hope this goes well.."
-    m 1b "Firstly, text tags."
-    m 1a "{b}This should be bold.{/b}"
+    m 1eub "Well lets get started then, [player]! "
+    m 3hub "Take my hand and I'll show you the way~!"
+    m 4lub "Firstly, text tags."
+    m "{b}This should be bold.{/b}"
     m "{i}This should be italic.{/i}"
-    m 2b "Next one is-{nw}"
-    m 1k "Interrupted!"
-    m 1a "Awkward{w=6} pause.."
+    m 4eud "Next one is-{nw}"
+    m 1euu "Interrupted!"
+    m 1hub "Awkward{w=6} pause.."
     pause (4.0)
-    m 4c "Lets move on now."
-    m 1b "Arguments!"
-    m 2a "{size=+20}Size should be different.{/size}"
-    m 2a "{color=#d18076}Color should be different.{/color}"
-    m 1d "{size=+20}{color=#d18076}Size AND color should be different.{/size}{/color}"
-#this part is a bit unclear so look at https://www.renpy.org/doc/html/text.html from time to time
-    m 1c "Now we're moving onto choices."
-    m 5a "Am I best girl?"
+    m 1hksdla "Lets move on now."
+    m 2eub "Arguments!"
+    m 7euo "{size=+20}Size should be different.{/size}"
+    m "{color=#d18076}Color should be different.{/color}"
+    m "{size=+20}{color=#d18076}Size AND color should be different.{/size}{/color}"
+    m 1tub "Now we're moving onto choices."
+    m 1ttb "Am I best girl?"
     menu:
          m "Am I best girl?"
 
          "Of course!":
-             m 1k "{i}Awww!{/i}"
-             m 5a "You're such a sweetheart."
+             m 3hubsb "{i}Awww!{/i}"
+             m "You're such a sweetheart."
 
          "Honestly? Not really..":
-             m 1i "..."
+             m 6cuc "..."
              call sor_scare1
-             m 1e "Just kidding.. it's 'alright."
-             m 4b "I mean.. you only clicked that option to see if this dialogue worked, right?"
-             m 5a "Because you love me~!"
+             m 1tsb "Just kidding.. it's 'alright."
+             m 1ekb "I mean.. you only clicked that option to see if this dialogue worked, right?"
+             m 4tkblb "Because you love me~!"
     call sor_after_menu
 return
 
 label sor_after_menu:
-    m 2b "Now that we've gotten through that."
-    m 4j "Next is transitions!"
-    m 1b "Lets go somewhere else with a transition."
-    hide monika with moveoutleft
-    stop music fadeout 1.0
-    scene bg closet with wipeleft_scene
-    play music t5 fadein 1.0
-    show monika 3k at t11 with moveinright
-    m "Here we are!"
-    m 2d "Next is poems,{nw}"
-    m 2m "But.. maybe we should go somewhere more comftorable."
-    hide monika with moveoutright
-    stop music fadeout 1.0
-    scene bg bedroom with fade
-    play music t4 fadein 1.0
-    show monika 1a at t11 with zoomout
-    m "There we go."
-    m 5a "This shouldn't be too hard, let me find a poem to use."
+    m 6eud "Now that we've gotten through that."
+    m 7sub "Next is poems~!"
+    m 1rub "This shouldn't be too hard, let me find a poem to use."
     call showpoem(poem_m3, img="monika 5a", music=True)
-    m 1j "Yay!"
-    m 1h "Okay, [player]! Time to see if you are focused to me."
-    m 2d "Let's see... your active window is.{w=0.5}.{w=0.5}.{nw}"
+    m 4hua "Yay!"
+    show monika 5eua at t11 zorder MAS_MONIKA_Z with dissolve_monika
+    m "Okay, [player]! Time to see if you are focused on me."
+    m "Let's see... your active window is.{w=0.5}.{w=0.5}.{nw}"
     pause 2.0
     if mas_isFocused():
-        m 1h "Me, yay!"
+        m 5hublb "Me, yay!"
     else:
         $ active_wind = mas_getActiveWindowHandle()
         if active_wind:
-            m 3c "[active_wind]."
+            m "[active_wind]."
         else:
-            m 1b "[player], you don't have an active window!"
-        m 2d "I wonder why you did not focused to me..."
-        m 3m "Don't worry, I know you did it for testing!"
-    m 4b "Now we move onto the harder part of poems."
-    m 2e "The minigame."
-    m 3k "Maybe I could get it in the first try, who knows?"
+            show monika 2tfp at t11 zorder MAS_MONIKA_Z with dissolve_monika
+            m "[player], you don't have an active window!"
+        m 1mft "Don't worry, I know you did it for testing!"
+    m 7eub "Now we move onto the harder part of poems."
+    m 1sub "The minigame."
     $ from store.mas_poemgame_consts import MONIKA_MODE
     call mas_poem_minigame(MONIKA_MODE,gather_words=False,glitch_nb=True,
         glitch_words=(True,None,None),hop_monika=False,music_fadein=0.0,
         music_fadeout=0.0,music_filename=audio.ghostmenu,total_words=20,
         trans_fast=False,trans_in=False,trans_out=True,sel_sound=None) from _call_poem_minigame_three
-
-    $ play_song(persistent.current_track, fadein=4.0)
-    if store.mas_globals.in_idle_mode:
-        $ mas_coreToIdleShield()
-    else:
-        $ mas_DropShield_core()
-    stop music
-    $ play_song(persistent.current_track, fadein=4.0)
     return
 
 label sor_scare1:
@@ -184,14 +157,31 @@ init 5 python:
     )
 
 label sor_monika_natsuki:
-    m 1euc "Natsuki.."
-    m 1eud "I actually don't have much to say about Natsuki."
-    m 3rud "Her home situation was awful already."
-    m 1ekb "I guess I felt a little bad making it worse so I left it alone mostly."
-    m 1ekc "Even if she isn't real."
-    m 4hub "She was actually pretty funny."
-    m 4eub "Her little flustered moments and 'tsundere' personality really showed how adorable she was."
-    m 1tud "Though sometimes she could get a bit annoying."
+    m 1luc "Natsuki.."
+    m 1dud "Natsuki was.."
+    m 3eub "She was quite the jokester!"
+    m 2tub "Do you remember when she made a joke on my name?"
+    m 7hub "'Ika' actually means squid in Japanese!"
+    m 1mub "So when she made the joke about squid referring to my name,"
+    m 3eub "it was a play on how the last three letter of my name is 'ika'!"
+    m 1tub "It didn't make sense in translation so it went over most people's head."
+    m 1eud "Honestly, you didn't get to actually see what we saw of Natsuki."
+    m 4eud "With the main character she always acted so guarded."
+    m 3eub "Of course, you saw a lot of clues to what actually made her whole."
+    m 1rkc "..."
+
+if persistent._mas_pm_cares_about_dokis:
+    m 3ekb "I know you miss them."
+    m 1dkb "But atleast we're together now.."
+    show monika 5hublb at t11 zorder MAS_MONIKA_Z with dissolve_monika
+    m 5hublb "Being with you is all I need!"
+
+else:
+    m 1esd "I don't regret what I did."
+    m 2ekc "But sometimes I do miss them."
+    m 1dkb "But atleast we're together now.."
+    show monika 5hublb at t11 zorder MAS_MONIKA_Z with dissolve_monika
+    m 5hublb "Being together is all we need!"
 
 return
 
