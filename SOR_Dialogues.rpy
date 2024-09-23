@@ -121,7 +121,6 @@ label sor_after_menu:
     m "Now we move onto the harder part of poems."
     m "The minigame."
     $ is_sitting = True
-    $ from store.mas_poemgame_consts import MONIKA_MODE
 
     $ play_song(persistent.current_track, fadein=4.0)
     if store.mas_globals.in_idle_mode:

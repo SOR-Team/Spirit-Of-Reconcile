@@ -1,4 +1,4 @@
-
+python:
     def sor_has_SuperuserPrivileges():
         """
         Tells if user running MAS has admin (Windows) or superuser/root (*nix)
